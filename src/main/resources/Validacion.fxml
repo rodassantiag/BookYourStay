@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<AnchorPane opacity="0.83" prefHeight="292.0" prefWidth="853.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.bookyourstay.controladores.ValidacionControlador">
+    <children>
+        <Label layoutX="58.0" layoutY="76.0" prefHeight="21.0" prefWidth="191.0" style="-fx-text-fill: #b7b6b6;" text="Escribe el código">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <Label layoutX="321.0" layoutY="76.0" prefHeight="34.0" prefWidth="498.0" style="-fx-text-fill: #b7b6b6;" text="Escribe el código de verificación de 6 dígitos para continuar con el inicio de sesión" textFill="WHITE" />
+        <Button layoutX="697.0" layoutY="181.0" mnemonicParsing="false" onAction="#verificarCodigo" prefHeight="38.0" prefWidth="121.0" style="-fx-background-color: #4B0082; -fx-background-radius: 15px; -fx-border-radius: 15px; -fx-text-fill: #b7b6b6;" text="Continuar" />
+        <TextField fx:id="txtCodigoVerificacion" layoutX="320.0" layoutY="119.0" prefHeight="26.0" prefWidth="498.0" promptText="Código" style="-fx-background-color: black; -fx-text-fill: white;" />
+        <Line endX="451.5999755859375" endY="1.4000091552734375" layoutX="358.0" layoutY="144.0" startX="-38.0" startY="1.399993896484375" stroke="#b7b6b6" />
+        <Button onAction="#nuevoCodigo" layoutX="579.0" layoutY="185.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #b7b6b6;" text="Reenviar código" />
+    </children>
+</AnchorPane>

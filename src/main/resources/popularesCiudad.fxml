@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.bookyourstay.controladores.PopularesCiudadControlador">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.39996337890625" minWidth="0.0" prefWidth="98.5999755859375" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="497.0" minWidth="10.0" prefWidth="398.4000244140625" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="284.20001831054685" minHeight="10.0" prefHeight="284.20001831054685" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="139.40000000000003" minHeight="10.0" prefHeight="10.599981689453159" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Button mnemonicParsing="false" onAction="#irPanelAdmin" text="Atrás" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </Button>
+      <BarChart fx:id="barChart" title="Alojamientos más populares por ciudad" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <ComboBox onAction="#cargarDatosBarChart" fx:id="ciudadComboBox" prefWidth="150.0" promptText="Elija la ciudad" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+   </children>
+</GridPane>

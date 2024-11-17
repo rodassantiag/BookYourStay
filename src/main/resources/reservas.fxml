@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="co.edu.uniquindio.bookyourstay.controladores.ReservasControlador">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="51.6" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.79999999999995" minWidth="10.0" prefWidth="498.79999999999995" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.5999755859375" minWidth="10.0" prefWidth="46.799999999999955" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="125.4" minHeight="10.0" prefHeight="15.799997711181646" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="311.2" minHeight="10.0" prefHeight="311.2" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="75.79996337890628" minHeight="10.0" prefHeight="21.400000000000034" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="reservaTableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="colTipoAlojamiento" prefWidth="75.0" text="Alojamiento" />
+          <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="colCiudad" prefWidth="75.0" text="Ciudad" />
+            <TableColumn fx:id="colFechaEntrada" prefWidth="97.59991455078125" text="Fecha Entrada" />
+            <TableColumn fx:id="colFechaSalida" prefWidth="75.0" text="Fecha Salida" />
+            <TableColumn fx:id="colTotalPagado" prefWidth="101.59998779296876" text="Total Pagado" />
+        </columns>
+      </TableView>
+      <Button onAction="#irPanelCliente" mnemonicParsing="false" text="Atrás" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button onAction="#cancelarReserva" mnemonicParsing="false" text="Cancelar Reserva" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
