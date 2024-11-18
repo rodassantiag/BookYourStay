@@ -13,6 +13,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
@@ -184,6 +185,23 @@ public class CrearReservaControlador implements Initializable {
 
 
     }
+    public void irInformacionAlojamiento(ActionEvent actionEvent) {
+        try {
+            Alojamiento alojamiento = alojamientoTableView.getSelectionModel().getSelectedItem();
+            if (alojamiento == null) {
+                throw new Exception("Debe seleccionar un alojamiento para ver la información.");
+            }
+
+            FXMLLoader loader = controladorPrincipal.navegarVentana("/informacionAlojamiento.fxml", "Información Alojamiento");
+            VerInformacionAlojamiento verInformacionAlojamiento = loader.getController();
+
+            verInformacionAlojamiento.inicializar(alojamiento);
+
+        } catch (Exception e) {
+            controladorPrincipal.crearAlerta(e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
 
     public void limpiarCampos(){
         ciudadComboBox.setValue(null);

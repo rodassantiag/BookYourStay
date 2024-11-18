@@ -178,6 +178,11 @@ public class ControladorPrincipal implements ServiciosBookYourStay {
     }
 
     @Override
+    public void crearResena(Reserva reserva, int puntuacion, String comentario) throws Exception {
+        bookYourStay.crearResena(reserva, puntuacion, comentario);
+    }
+
+    @Override
     public Map<TipoAlojamiento, Double> obtenerPorcentajeMasRentable() {
         return bookYourStay.obtenerPorcentajeMasRentable();
     }

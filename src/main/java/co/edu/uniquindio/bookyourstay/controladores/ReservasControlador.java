@@ -6,10 +6,12 @@ import co.edu.uniquindio.bookyourstay.factory.Hotel;
 import co.edu.uniquindio.bookyourstay.modelo.Alojamiento;
 import co.edu.uniquindio.bookyourstay.modelo.Cliente;
 import co.edu.uniquindio.bookyourstay.modelo.Reserva;
+import javafx.beans.Observable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
@@ -23,14 +25,13 @@ import java.util.ResourceBundle;
 
 @Getter
 @Setter
-public class ReservasControlador implements Initializable {
+public class ReservasControlador implements Initializable, co.edu.uniquindio.bookyourstay.observador.Observable {
     private final ControladorPrincipal controladorPrincipal = ControladorPrincipal.getInstancia();
     private Cliente cliente;
     @FXML
     private TableView<Reserva> reservaTableView;
     @FXML
     private TableColumn<Reserva, String> colTipoAlojamiento, colNombre, colCiudad, colFechaEntrada, colFechaSalida, colTotalPagado;
-
     public ReservasControlador(){
         this.cliente = controladorPrincipal.obtenerSesion();
     }
@@ -81,5 +82,27 @@ public class ReservasControlador implements Initializable {
         } catch (Exception e) {
             controladorPrincipal.crearAlerta(e.getMessage(), Alert.AlertType.ERROR);
         }
+    }
+
+    public void irCrearResena() throws Exception {
+        try {
+            Reserva reserva = reservaTableView.getSelectionModel().getSelectedItem();
+            if (reserva == null) {
+                throw new Exception("Debe seleccionar una reserva para añadir una reseña.");
+            }
+
+            FXMLLoader loader = controladorPrincipal.navegarVentana("/resena.fxml", "Reseña");
+            ResenaControlador resenaControlador = loader.getController();
+
+            resenaControlador.inicializar(reserva);
+
+        } catch (Exception e) {
+            controladorPrincipal.crearAlerta(e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    @Override
+    public void notificar() {
+        cargarDatosTabla();
     }
 }

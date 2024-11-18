@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="co.edu.uniquindio.bookyourstay.controladores.ReservasControlador">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.bookyourstay.controladores.ReservasControlador">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="51.6" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.79999999999995" minWidth="10.0" prefWidth="498.79999999999995" />
@@ -29,7 +29,8 @@
             <TableColumn fx:id="colTotalPagado" prefWidth="101.59998779296876" text="Total Pagado" />
         </columns>
       </TableView>
-      <Button onAction="#irPanelCliente" mnemonicParsing="false" text="Atrás" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button onAction="#cancelarReserva" mnemonicParsing="false" text="Cancelar Reserva" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#irPanelCliente" text="Atrás" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#cancelarReserva" text="Cancelar Reserva" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Button onAction="#irCrearResena" mnemonicParsing="false" text="Crear Reseña" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
    </children>
 </GridPane>

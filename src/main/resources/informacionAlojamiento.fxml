@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="419.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.bookyourstay.controladores.VerInformacionAlojamiento">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.20001220703125" minWidth="10.0" prefWidth="72.00000381469727" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.20000000000005" minWidth="10.0" prefWidth="293.59999618530276" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.20001220703125" minWidth="10.0" prefWidth="73.60001220703123" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.59998168945313" minHeight="10.0" prefHeight="12.599999809265142" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="453.600048828125" minHeight="10.0" prefHeight="453.600048828125" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="76.60001220703128" minHeight="2.3999755859375114" prefHeight="15.999951171874955" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="45.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="50.0" text="Nombre:" />
+                  <TextField fx:id="txtNombre" disable="true" prefHeight="26.0" prefWidth="236.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="136.0" text="Descripción:" />
+                  <TextArea fx:id="txtDescripcion" disable="true" prefHeight="53.0" prefWidth="281.0" />
+               </children>
+            </HBox>
+            <Label prefHeight="18.0" prefWidth="51.0" text="Reseñas:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TableView fx:id="resenaTableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="colPuntuacion" prefWidth="80.0000091791153" text="Puntuación" />
+                <TableColumn fx:id="colComentario" prefWidth="206.40001678466797" text="Comentario" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</GridPane>

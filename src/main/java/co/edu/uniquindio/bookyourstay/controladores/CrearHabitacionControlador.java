@@ -62,7 +62,6 @@ public class CrearHabitacionControlador {
             limpiarCampos();
             controladorPrincipal.crearAlerta("La habitación se ha creado exitosamente", Alert.AlertType.INFORMATION);
         } catch (Exception e) {
-            e.printStackTrace();
             controladorPrincipal.crearAlerta(e.getMessage(), Alert.AlertType.ERROR);
         }
     }

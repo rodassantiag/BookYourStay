@@ -54,6 +54,8 @@ public interface ServiciosBookYourStay {
 
     List<Alojamiento> obtenerAlojamientosRangoPrecio(double precioMin, double precioMax) throws Exception;
 
+    void crearResena(Reserva reserva, int puntuacion, String comentario) throws Exception;
+
     Map<TipoAlojamiento, Double> obtenerPorcentajeMasRentable();
 
     Map<TipoAlojamiento, Integer> obtenerAlojamientoMasPopular(Ciudad ciudad);

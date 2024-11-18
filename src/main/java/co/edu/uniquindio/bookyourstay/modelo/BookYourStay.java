@@ -29,6 +29,7 @@ public class BookYourStay implements ServiciosBookYourStay {
         this.clientes.add(Cliente.builder()
                 .correo("pepito123")
                 .contrasena("123")
+                .nombre("pepito")
                 .rol(Rol.CLIENTE)
                 .primerLogin(false)
                         .billeteraVirtual(BilleteraVirtual.builder()
@@ -257,6 +258,7 @@ public class BookYourStay implements ServiciosBookYourStay {
 
 
 
+
     @Override
     public Reserva crearReservaHotel(Hotel hotel, Habitacion habitacion, Cliente cliente, LocalDate fechaEntrada, LocalDate fechaSalida,
                                      int numeroHuespedes) throws Exception {
@@ -466,11 +468,32 @@ public class BookYourStay implements ServiciosBookYourStay {
     }
 
     private boolean estaEnRangoPrecio(double precioMin, double precioMax, double precioAlojamiento) {
-        if (precioAlojamiento >= precioMin &&  precioAlojamiento <= precioMax){
-            return true;
-        }
-        return false;
+        return precioAlojamiento >= precioMin && precioAlojamiento <= precioMax;
     }
+
+    @Override
+    public void crearResena(Reserva reserva, int puntuacion, String comentario) throws Exception {
+        Alojamiento alojamiento = reserva.getAlojamiento();
+
+        if (alojamiento == null) {
+            throw new IllegalArgumentException("El alojamiento asociado a la reserva no existe.");
+        }
+
+        if (reserva.getFechaSalida().isAfter(LocalDate.now())){
+            throw new Exception("No se puede generar una reseña antes de la fecha de salida.");
+        }
+
+        Resena resena = Resena.builder()
+                .calificacion(puntuacion)
+                .comentario(comentario)
+                .build();
+
+        alojamiento.getResenas().add(resena);
+    }
+
+
+
+
 
     @Override
     public Map<TipoAlojamiento, Double> obtenerPorcentajeMasRentable(){

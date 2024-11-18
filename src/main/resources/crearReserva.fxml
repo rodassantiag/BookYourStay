@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.bookyourstay.controladores.CrearReservaControlador">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.bookyourstay.controladores.CrearReservaControlador">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.79998779296875" minWidth="10.0" prefWidth="55.200008392333984" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="571.9999916076661" minWidth="10.0" prefWidth="567.9999916076661" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.3999633789063" minWidth="10.0" prefWidth="42.60003662109375" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="628.000048828125" minWidth="10.0" prefWidth="628.000048828125" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.3999633789063" minWidth="10.0" prefWidth="31.399951171875045" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="123.00000610351563" minHeight="10.0" prefHeight="36.60000381469726" vgrow="SOMETIMES" />
@@ -36,22 +36,27 @@
                   <ComboBox fx:id="tipoAlojamientoComboBox" onAction="#actualizarTablaTipo" prefHeight="26.0" prefWidth="134.0" promptText="Tipo" visible="false" />
                   <TextField fx:id="txtNombrePrecioAlojamiento" visible="false" />
                   <TextField fx:id="txtPrecioMax" promptText="Precio Máximo" visible="false" />
-                   <Button fx:id="botonFiltroPrecio" onAction="#actualizarTablaPrecios" visible="false" text="Buscar"/>
+                   <Button fx:id="botonFiltroPrecio" onAction="#actualizarTablaPrecios" text="Buscar" visible="false" />
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
-            <TableView fx:id="alojamientoTableView" prefHeight="238.0" prefWidth="417.0">
-              <columns>
-                <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
-                <TableColumn fx:id="colTipoAlojamiento" prefWidth="69.60004425048828" text="tipo" />
-                  <TableColumn fx:id="colCapacidadAlojamiento" prefWidth="80.79997253417969" text="Capacidad" />
-                  <TableColumn fx:id="colPrecioNoche" prefWidth="107.20001220703125" text="Precio Noche" />
-                  <TableColumn fx:id="colCostoAseo" prefWidth="97.5999755859375" text="Aseo" />
-                  <TableColumn fx:id="colCostoMantenimiento" prefWidth="136.800048828125" text="Mantenimiento" />
-              </columns>
-            </TableView>
+            <HBox prefHeight="241.0" prefWidth="572.0" spacing="10.0">
+               <children>
+                  <TableView fx:id="alojamientoTableView" prefHeight="78.0" prefWidth="575.0">
+                    <columns>
+                      <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+                      <TableColumn fx:id="colTipoAlojamiento" prefWidth="69.60004425048828" text="tipo" />
+                        <TableColumn fx:id="colCapacidadAlojamiento" prefWidth="80.79997253417969" text="Capacidad" />
+                        <TableColumn fx:id="colPrecioNoche" prefWidth="107.20001220703125" text="Precio Noche" />
+                        <TableColumn fx:id="colCostoAseo" prefWidth="97.5999755859375" text="Aseo" />
+                        <TableColumn fx:id="colCostoMantenimiento" prefWidth="136.800048828125" text="Mantenimiento" />
+                    </columns>
+                  </TableView>
+                  <Button onAction="#irInformacionAlojamiento" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" text="Info" />
+               </children>
+            </HBox>
             <TableView fx:id="habitacionTableView" prefHeight="176.0" prefWidth="319.0" visible="false">
               <columns>
                 <TableColumn fx:id="colNumero" prefWidth="95.9999885559082" text="Número" />
@@ -65,22 +70,22 @@
             </TableView>
             <DatePicker fx:id="fechaEntradaDp" prefHeight="26.0" prefWidth="296.0" promptText="Fecha Ingreso">
                <VBox.margin>
-                  <Insets left="120.0" />
+                  <Insets left="150.0" />
                </VBox.margin>
             </DatePicker>
             <DatePicker fx:id="fechaSalidaDp" prefHeight="26.0" prefWidth="296.0" promptText="Fecha Salida">
                <VBox.margin>
-                  <Insets left="120.0" />
+                  <Insets left="150.0" />
                </VBox.margin>
             </DatePicker>
-            <TextField fx:id="txtNumeroHuespedes" prefHeight="26.0" prefWidth="168.0" promptText="Número de huespedes">
+            <TextField fx:id="txtNumeroHuespedes" prefHeight="26.0" prefWidth="278.0" promptText="Número de huespedes">
                <VBox.margin>
-                  <Insets left="120.0" right="150.0" />
+                  <Insets left="150.0" right="180.0" />
                </VBox.margin>
             </TextField>
             <Button mnemonicParsing="false" onAction="#crearReserva" prefHeight="26.0" prefWidth="185.0" text="Reservar">
                <VBox.margin>
-                  <Insets left="180.0" />
+                  <Insets left="200.0" />
                </VBox.margin>
             </Button>
          </children>
